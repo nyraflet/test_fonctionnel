@@ -11,6 +11,7 @@ import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -32,14 +33,13 @@ public class CandidatureTest {
         driver.get("http://127.0.0.1:8000");
         base = new Base(driver);
         base.acceptCoukie();
-        driver.navigate().refresh();
         candidature = new Candidature(driver, base);
     }
 
-    // @AfterTest
-    // public void closeWindow() {
-    // driver.close();
-    // }
+    @AfterTest
+    public void closeWindow() {
+        driver.close();
+    }
 
     @DataProvider(name = "dataProvider")
     private static Object[] dtProv() throws IOException, ParseException {
@@ -52,17 +52,49 @@ public class CandidatureTest {
         candidature.scrollInto();
     }
 
-    // @Test(dataProvider = "dataProvider", priority = 2)
-    // public void inputNameTest(JSONObject data) throws InterruptedException {
-    // driver.navigate().to("http://127.0.0.1:8000/formateurs");
-    // Assert.assertTrue(candidature.inputNameTest(data));
+    @Test(dataProvider = "dataProvider", priority = 2)
+    public void inputNameTest(JSONObject data) throws InterruptedException {
+        Assert.assertTrue(candidature.inputNameTest(data));
+    }
+
+    @Test(dataProvider = "dataProvider", priority = 4)
+    public void inputLatsNameTest(JSONObject data) throws InterruptedException {
+        Assert.assertTrue(candidature.inputLatsNameTest(data));
+    }
+
+    @Test(dataProvider = "dataProvider", priority = 5)
+    public void inputEmailTest(JSONObject data) throws InterruptedException {
+        Assert.assertTrue(candidature.inputEmailTest(data));
+    }
+
+    @Test(dataProvider = "dataProvider", priority = 6)
+    public void inputPhoneTest(JSONObject data) throws InterruptedException {
+        Assert.assertTrue(candidature.inputPhoneTest(data));
+    }
+
+    @Test(dataProvider = "dataProvider", priority = 7)
+    public void inputCVTest(JSONObject data) throws InterruptedException {
+        Assert.assertTrue(candidature.inputCVTest(data));
+    }
+
+    @Test(dataProvider = "dataProvider", priority = 8)
+    public void inputSkillTest(JSONObject data) throws InterruptedException {
+        Assert.assertTrue(candidature.inputSkillTest(data));
+    }
+
+    @Test(dataProvider = "dataProvider", priority = 9)
+    public void inputRefTest(JSONObject data) throws InterruptedException {
+        Assert.assertTrue(candidature.inputRefTest(data));
+    }
+
+    // @Test(dataProvider = "dataProvider", priority = 10)
+    // public void sendCandidature(JSONObject data_json) {
+    // candidature.depotCandidature(data_json);
     // driver.navigate().refresh();
     // }
-
-    @Test(dataProvider = "dataProvider", priority = 3)
-    public void sendCandidature(JSONObject data_json) {
-        candidature.depotCandidature(data_json);
-        driver.navigate().refresh();
+    @BeforeMethod
+    public void refreshPage() {
+        driver.navigate().to("http://127.0.0.1:8000/formateurs");
     }
 
     @AfterMethod

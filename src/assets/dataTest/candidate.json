@@ -1,48 +1,48 @@
 [
   {
     "str_lastname": ["NameInvalide", "                  !:"],
-    "str_firstname": ["", "John"],
-    "str_email": ["", "john.doe@example.com"],
+    "str_firstname": ["invalide", "John"],
+    "str_email": ["invaliinvalidede", "john.doe@example.com"],
     "str_phonenumber": ["", "+1234567890"],
-    "str_daily_rate": ["", "100"],
+    "str_daily_rate": ["invalide", "100"],
     "str_addFileButton": [
-      "",
+      "invalide",
       [
         "src/assets/files/DevSecOpsActivitesToolsGuidebookTables.pdf",
         "src/assets/files/900SCG.pdf"
       ]
     ],
-    "str_candidature_skills": ["", "Java, Python, Selenium"],
-    "str_candidature_ref": ["", "CAND123456"]
+    "str_candidature_skills": ["invalide", "Java, Python, Selenium"],
+    "str_candidature_ref": ["invalide", "CAND123456"]
   },
   {
-    "str_lastname": ["ztfzytfyt", "Tamarin"],
-    "str_firstname": ["", "John"],
-    "str_email": ["", "john.doe@example.com"],
-    "str_phonenumber": ["", "+1234567890"],
-    "str_daily_rate": ["", "200"],
+    "str_lastname": ["invalide", "Tamarin"],
+    "str_firstname": ["invalide", "John"],
+    "str_email": ["invalide", "john.doe@example.com"],
+    "str_phonenumber": ["invalide", "+1234567890"],
+    "str_daily_rate": ["invalide", "200"],
     "str_addFileButton": [
-      "",
+      "invalide",
       [
         "src/assets/files/Verbes-anglais-temps.pdf",
         "src/assets/files/DevSecOpsActivitesToolsGuidebookTables.pdf",
         "src/assets/files/900SCG.pdf"
       ]
     ],
-    "str_candidature_skills": ["", "Java,Python"],
-    "str_candidature_ref": ["", "CAND123456"]
+    "str_candidature_skills": ["invalide", "Java,Python"],
+    "str_candidature_ref": ["invalide", "CAND123456"]
   },
   {
-    "str_lastname": ["invalideNon", "Golan"],
-    "str_firstname": ["", "John"],
-    "str_email": ["", "john.doe@example.com"],
-    "str_phonenumber": ["", "+1234567890"],
-    "str_daily_rate": ["", "300"],
+    "str_lastname": ["invalide", "Golan"],
+    "str_firstname": ["invalide", "John"],
+    "str_email": ["invalide", "john.doe@example.com"],
+    "str_phonenumber": ["invalide", "+1234567890"],
+    "str_daily_rate": ["invalide", "300"],
     "str_addFileButton": [
-      "",
+      "invalide",
       ["src/assets/files/DevSecOpsActivitesToolsGuidebookTables.pdf"]
     ],
-    "str_candidature_skills": ["", "Java,Python,Selenium"],
-    "str_candidature_ref": ["", "CAND123456"]
+    "str_candidature_skills": ["invalide", "Java,Python,Selenium"],
+    "str_candidature_ref": ["invalide", "CAND123456"]
   }
 ]

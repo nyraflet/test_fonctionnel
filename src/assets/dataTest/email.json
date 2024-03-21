@@ -1,18 +1,18 @@
 [
   {
-    "params": ["", "                          "]
+    "email": ["", "                          "]
   },
   {
-    "params": ["", "Cybert Sec"]
+    "email": ["", "Cybert Sec"]
   },
   {
-    "params": ["", "                  !/"]
+    "email": ["", "                  !/"]
   },
   {
-    "params": ["", "\\!//*$!!"]
+    "email": ["", "\\!//*$!!"]
   },
   {
-    "params": [
+    "email": [
       "",
       "Of course, as with every guideline, there are exceptions, and one that is commonly seen with PageObjects is to check that the WebDriver is on the correct page when we instantiate the PageObject.This is done in the example below.Finally, a PageObject need not represent an entire page. It may represent a section that appears frequently within a site or page, such as site navigation. The essential principle is that there is only one place in your test suite with knowledge of the structure of the HTML of a particular (part of a) Of course, as with every guideline, there are exceptions, and one that is commonly seen with PageObjects is to check that the WebDriver is on the correct page when we instantiate the PageObject.This is done in the example below.Finally, a PageObject need not represent an entire page. It may represent a section that appears frequently within a site or page, such as site navigation. The essential principle is that there is only one place in your test suite with knowledge of the structure of the HTML of a particular (part of a) page page"
     ]

@@ -48,7 +48,7 @@ public class HomePage {
 
     // fill the input to make a reseach
     public Boolean makeReaserche(JSONObject jsonData) {
-        driver.findElement(searchFormation).sendKeys(jsonData.get("params").toString());
+        driver.findElement(searchFormation).sendKeys(base.extractData(jsonData, "params", 1));
         driver.findElement(btnSearch).click();
         base.isVisible(resultRecherche, 2);
         return driver.findElement(resultRecherche).isDisplayed();
@@ -104,9 +104,9 @@ public class HomePage {
         return true;
     }
 
-    public Boolean sendMailForActuality() {
+    public Boolean sendMailForActuality(JSONObject jsonData) {
         base.scrollDown(footer);
-        driver.findElement(inputEmail).sendKeys("nyraflet@gmail.boom");
+        driver.findElement(inputEmail).sendKeys(base.extractData(jsonData, "email", 1));
         driver.findElement(btnSendEmail).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         if (driver.findElement(error).isDisplayed()) {

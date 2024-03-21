@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.time.Duration;
 import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
@@ -93,6 +94,11 @@ public class Base {
             return false;
         }
 
+    }
+
+    public String extractData(JSONObject jsonData, String field, int fieldIn) {
+        JSONArray jsonArray = (JSONArray) jsonData.get(field);
+        return jsonArray.toArray()[fieldIn].toString();
     }
 
 }

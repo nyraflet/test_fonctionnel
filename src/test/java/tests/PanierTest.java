@@ -71,7 +71,7 @@ public class PanierTest {
         if (ITestResult.FAILURE == result.getStatus()) {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             Thread.sleep(500);
-            base.takeScreenShoot("src/assets/ScreenShoot/" + result.getName() + ".png");
+            base.takeScreenShoot("src/assets/ScreenShoot/" + result.id() + ".png");
         }
     }
 }

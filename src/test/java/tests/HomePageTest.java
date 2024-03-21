@@ -74,24 +74,31 @@ public class HomePageTest {
         Assert.assertTrue(homePage.moveToFinacement());
     }
 
-    @DataProvider(name = "dataProvider")
-    private static Object[] dtProv() throws IOException, ParseException {
+    @DataProvider(name = "dataResearch")
+    private static Object[] dataResearch() throws IOException, ParseException {
         String data = "src/assets/dataTest/recherche.json";
         return Base.readJsonFile(data);
     }
 
-    @Test(dataProvider = "dataProvider", priority = 7)
+    @Test(dataProvider = "dataResearch", priority = 7)
     public void recherche(JSONObject jsonData) {
         driver.navigate().to("http://127.0.0.1:8000");
         // the test is failed when the text 'Les Catégories de Formation' is not found
         Assert.assertTrue(homePage.makeReaserche(jsonData));
     }
 
-    @Test(priority = 8)
-    public void sendEmailAdd() throws Exception {
+    //
+    @DataProvider(name = "dataEmail")
+    private static Object[] dataEmail() throws IOException, ParseException {
+        String data = "src/assets/dataTest/email.json";
+        return Base.readJsonFile(data);
+    }
+
+    @Test(dataProvider = "dataEmail", priority = 8)
+    public void sendEmailAdd(JSONObject jsonObject) throws Exception {
         driver.navigate().to("http://127.0.0.1:8000");
         // the test is failed when the text 'Les Catégories de Formation' is not found
-        Assert.assertTrue(homePage.sendMailForActuality());
+        Assert.assertTrue(homePage.sendMailForActuality(jsonObject));
     }
 
     @Test(priority = 9)
@@ -105,7 +112,7 @@ public class HomePageTest {
         if (ITestResult.FAILURE == result.getStatus()) {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             Thread.sleep(500);
-            base.takeScreenShoot("src/assets/ScreenShoot/" + result.getName() + ".png");
+            base.takeScreenShoot("src/assets/ScreenShoot/" + result.getName() + "_" + result.getTestContext() + ".png");
         }
     }
 }

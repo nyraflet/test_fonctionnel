@@ -36,7 +36,6 @@ public class Panier {
     // click on btn 'mettre de cote'
     public Boolean saveCourse() {
         driver.findElement(saveTemp).click();
-        String vide = driver.findElement(emptyCourse).getText();
         if (!driver.findElement(saveCourse).isDisplayed()) {
             return false;
         }
